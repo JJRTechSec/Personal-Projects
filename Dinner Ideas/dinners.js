@@ -14,7 +14,8 @@ let mealList = document.querySelector('.list');
 let list = createElement('ul');
 let chickenMeal = createElement('li');
 
-chickenButton.addEventListener('click', function() {
+chickenButton.addEventListener('click', function () {
+  console.log('Chicken button clicked');
   const list = createElement('ul');
   const chickenMeal = createElement('li');
 
