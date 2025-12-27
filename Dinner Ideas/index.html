@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weekly Meal Selector</title>
+    <link rel="stylesheet" href="dinner.css">
+    <script src="dinners.js" defer></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>Weekly Dinner Selector</h1>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <div class="top-section">
+        <p>This selector has a selection of meals based on the following types:</p>
+        <ul>
+          <li>Chicken</li>
+          <li>Mince</li>
+          <li>Plant-based</li>
+          <li>Other (pølser etc.)</li>
+          <li>High-carb*</li>
+        </ul>
+        <div class = picture-section>
+          <img>
+          <img>
+          <img>
+          <img>
+          <img>
+        </div>
+        <p>*This list is a combination taken from the other lists</p>
+      </div>
+
+      <div class="meal-list-section">
+        <h3>Click the buttons to reveal/hide the lists of meals</h3>
+        <div class="meal-lists">
+          <div class="chicken list">
+            <button id="chickenButton">Chicken</button>
+          </div>
+          <div class="mince list">
+            <button>Mince</button>
+          </div>
+          <div class="plant list">
+            <button>Plant-Based</button>
+          </div>
+          <div class="other list">
+            <button>Other</button>
+          </div>
+          <div class="highCarb list">
+            <button>High-Carb</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="meal-generator">
+        <h3>Click here to have your weekly meals randomly selected</h3>
+        <button>Generate Meals</button>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer></footer>
+  </body>
+</html>

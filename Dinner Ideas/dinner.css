@@ -1,0 +1,52 @@
+html,
+body {
+  margin: 1em;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.top-section {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.top-section p {
+  grid-column: 1 / -1;
+}
+
+.picture-section {
+  border: 1px solid black;
+}
+
+.meal-list-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 3em;
+}
+
+.meal-lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.meal-generator {
+  text-align: center;
+}
+
+button {
+  width: 10em;
+  padding: 0.75em;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+footer {
+  height: 3em;
+}
