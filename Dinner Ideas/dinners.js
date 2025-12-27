@@ -8,20 +8,20 @@ let oddDays = ['Monday', 'Wednesday'];
 let evenDays = ['Tuesday', 'Thursday', 'Saturday'];
 let weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-let chickenButton = document.querySelector('chickenButton');
+const list = document.createElement('ul');
+const dinner = document.createElement('li');
+let chickenList = document.querySelector('.list');
 
-let mealList = document.querySelector('.list');
-let list = createElement('ul');
-let chickenMeal = createElement('li');
+let button = document.querySelector('button');
 
-chickenButton.addEventListener('click', function () {
+button.addEventListener('click', function () {
   console.log('Chicken button clicked');
-  const list = createElement('ul');
-  const chickenMeal = createElement('li');
 
   for (meal in chickenMeals) {
-    chickenMeal.textContent = meal;
-    list.append(chickenMeal);
-    mealList.append(list);
-  };
-});
+    const list = document.createElement('ul');
+    const dinner = document.createElement('li');
+    dinner.textContent = chickenMeals[meal];
+    list.append(dinner);
+    chickenList.append(list);
+  }
+})
