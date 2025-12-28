@@ -1,8 +1,10 @@
 let chickenMeals = ['Teriyaki', 'Pesto Chicken', 'Caesar Salad', 'Pasta Bake', 'Sweet and Sour', 'Enchiladas', 'Chicken Alfredo', 'Burritos', 'Fajitas'];
-let minceMeals = ['Meatballs', 'Tacos', 'Lasagne', 'Baguettes', 'Bolognese', 'Sloppy Joes', 'form', 'burgers'];
+let minceMeals = ['Meatballs', 'Tacos', 'Lasagne', 'Baguettes', 'Bolognese', 'Sloppy Joes', 'Form', 'Burgers'];
 let plantBased = ['Chickpea Curry', 'Falafel Salad'];
 let other = ['Form', 'Kjott Pølser', 'Pølser', 'Chorizo Gnocchi', 'Kebab'];
 let highCarb = ['Teriyaki', 'Pesto Chicken', 'Pasta Bake', 'Sweet and Sour', 'Burritos', 'Meatballs', 'Bolognese', 'Form'];
+
+let usedMeals = [];
 
 let oddDays = ['Monday', 'Wednesday'];
 let evenDays = ['Tuesday', 'Thursday', 'Saturday'];
@@ -11,166 +13,109 @@ let weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturda
 let list;
 let dinner;
 
-// CHICKEN
+// Function for meal toggling
+function setMealToggle(buttonId, containerClass, meals) {
+  const button = document.getElementById(buttonId);
+  const container = document.querySelector(`.${containerClass} .items`);
 
-let chickenButton = document.getElementById('chickenButton');
+  button.addEventListener('click', () => {
+    const isActive = container.childElementCount > 0;
 
-chickenButton.addEventListener('click', function () {
-  let chickenList = document.querySelector('.chicken');
-  console.log('Chicken button clicked');
+    if (isActive) {
+      container.innerHTML = '';
+      return;
+    }
 
-  chickenList.classList.toggle('active');
+    const ul = document.createElement('ul');
 
-  if (chickenList.classList.contains('active')) {
-    console.log('Showing chicken list')
-    // CYCLE THROUGH MEAL LIST AND ADD TO LIST
-    for (meal in chickenMeals) {
-      const list = document.createElement('ul');
-      const dinner = document.createElement('li');
-      dinner.textContent = chickenMeals[meal];
-      list.append(dinner);
-      chickenList.append(list);
-    };
+    for (const meal of meals) {
+      const li = document.createElement('li');
+      li.textContent = meal;
+      ul.appendChild(li);
+    }
+
+    container.appendChild(ul);
+
+    if (!button || !container) {
+      console.error('Missing button or container:', buttonId, containerClass);
+      return;
+    }
+  });
+}
+
+
+setMealToggle('chickenButton', 'chicken', chickenMeals);
+setMealToggle('minceButton', 'mince', minceMeals);
+setMealToggle('plantButton', 'plant', plantBased);
+setMealToggle('otherButton', 'other', other);
+setMealToggle('carbButton', 'highCarb', highCarb);
+
+// Tidy up of meal selection
+function pickRandomMeal(sourceArray) {
+  if (sourceArray.length === 0) return null;
+
+  const index = Math.floor(Math.random() * sourceArray.length);
+  const meal = sourceArray[index];
+
+  sourceArray.splice(index, 1);
+  usedMeals.push(meal);
+
+  return meal;
+}
+
+function findOddDayMeals() {
+  return pickRandomMeal(chickenMeals);
+}
+
+function findEvenDayMeals() {
+  return pickRandomMeal(minceMeals);
+}
+
+function findFridayMeal() {
+  return pickRandomMeal(highCarb);
+}
+
+function findSundayMeal() {
+  const combined = [...plantBased, ...other];
+
+  const meal = pickRandomMeal(combined);
+  if (!meal) return null;
+
+  if (plantBased.includes(meal)) {
+    plantBased.splice(plantBased.indexOf(meal), 1);
+  } else {
+    other.splice(other.indexOf(meal), 1);
   }
-  else {
-    console.log('Hiding chicken list');
-    // REMOVE LIST
-    if (chickenList.children.length > 1) {
-      console.log(chickenList.children);
-      chickenMeals.forEach(function () {
-        chickenList.removeChild(chickenList.children[1]);
-      });
-    };
+
+  return meal;
+}
+
+// find weekly list
+function findWeeklyMeals() {
+  usedMeals.length = 0;
+
+  for (const day of weekdays) {
+    let meal;
+
+    if (day === 'Monday' || day === 'Wednesday') {
+      meal = findOddDayMeals();
+    } else if (day === 'Tuesday' || day === 'Thursday' || day === 'Saturday') {
+      meal = findEvenDayMeals();
+    } else if (day === 'Friday') {
+      meal = findFridayMeal();
+    } else {
+      meal = findSundayMeal();
+    }
+
+    console.log(`${day}: ${meal}`);
   }
-});
+};
 
-
-// MINCE
-let minceButton = document.getElementById('minceButton');
-
-minceButton.addEventListener('click', function () {
-  let minceList = document.querySelector('.mince');
-  console.log('Mince button clicked');
-
-  minceList.classList.toggle('active');
-
-  if (minceList.classList.contains('active')) {
-    console.log('Showing mince list')
-    // CYCLE THROUGH MEAL LIST AND ADD TO LIST
-    for (meal in minceMeals) {
-      const list = document.createElement('ul');
-      const dinner = document.createElement('li');
-      dinner.textContent = minceMeals[meal];
-      list.append(dinner);
-      minceList.append(list);
-    };
-  }
-  else {
-    console.log('Hiding mince list');
-    // REMOVE LIST
-    if (minceList.children.length > 1) {
-      console.log(minceList.children);
-      minceMeals.forEach(function () {
-        minceList.removeChild(minceList.children[1]);
-      });
-    };
-  }
-});
-
-
-// PLANT-BASED
-let plantButton = document.getElementById('plantButton');
-
-plantButton.addEventListener('click', function () {
-  let plantList = document.querySelector('.plant');
-  console.log('Plant button clicked');
-  plantList.classList.toggle('active');
-
-  if (plantList.classList.contains('active')) {
-    console.log('Showing plant-based list')
-    // CYCLE THROUGH MEAL LIST AND ADD TO LIST
-    for (meal in plantBased) {
-      const list = document.createElement('ul');
-      const dinner = document.createElement('li');
-      dinner.textContent = plantBased[meal];
-      list.append(dinner);
-      plantList.append(list);
-    };
-  }
-  else {
-    console.log('Hiding plant-based list');
-    // REMOVE LIST
-    if (plantList.children.length > 1) {
-      console.log(plantList.children);
-      plantBased.forEach(function () {
-        plantList.removeChild(plantList.children[1]);
-      });
-    };
-  }
-});
-
-
-// OTHER
-let otherButton = document.getElementById('otherButton');
-
-otherButton.addEventListener('click', function () {
-  let otherList = document.querySelector('.other');
-  console.log('Other button clicked');
-
-  otherList.classList.toggle('active');
-
-  if (otherList.classList.contains('active')) {
-    console.log('Showing mince list')
-    // CYCLE THROUGH MEAL LIST AND ADD TO LIST
-    for (meal in other) {
-      const list = document.createElement('ul');
-      const dinner = document.createElement('li');
-      dinner.textContent = other[meal];
-      list.append(dinner);
-      otherList.append(list);
-    };
-  }
-  else {
-    console.log('Hiding other list');
-    // REMOVE LIST
-    if (otherList.children.length > 1) {
-      console.log(otherList.children);
-      other.forEach(function () {
-        otherList.removeChild(otherList.children[1]);
-      });
-    };
-  }
-});
-
-
-// CARB
-let carbButton = document.getElementById('carbButton');
-
-carbButton.addEventListener('click', function () {
-  let carbList = document.querySelector('.highCarb');
-  console.log('Carb button clicked');
-
-  carbList.classList.toggle('active');
-
-  if (carbList.classList.contains('active')) {
-    console.log('Showing high-carb list')
-    // CYCLE THROUGH MEAL LIST AND ADD TO LIST
-    for (meal in highCarb) {
-      const list = document.createElement('ul');
-      const dinner = document.createElement('li');
-      dinner.textContent = highCarb[meal];
-      list.append(dinner);
-      carbList.append(list);
-    };
-  }
-  else {
-    console.log('Hiding high-carb list');
-    // REMOVE LIST
-    if (carbList.children.length > 1) {
-      console.log(carbList.children);
-      highCarb.forEach(function () {
-        carbList.removeChild(carbList.children[1]);
-      });
-    };
-  }
-});
+findWeeklyMeals();
+console.log(usedMeals);
+console.log(chickenMeals);
+console.log(minceMeals);
+console.log(other);
+console.log(highCarb);
+console.log(plantBased);
+// print weekly list
