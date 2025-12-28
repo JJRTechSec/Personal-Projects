@@ -1,3 +1,5 @@
+
+
 let chickenMeals = ['Teriyaki', 'Pesto Chicken', 'Caesar Salad', 'Pasta Bake', 'Sweet and Sour', 'Enchiladas', 'Chicken Alfredo', 'Burritos', 'Fajitas'];
 let minceMeals = ['Meatballs', 'Tacos', 'Lasagne', 'Baguettes', 'Bolognese', 'Sloppy Joes', 'Form', 'Burgers'];
 let plantBased = ['Chickpea Curry', 'Falafel Salad'];
@@ -119,3 +121,18 @@ console.log(other);
 console.log(highCarb);
 console.log(plantBased);
 // print weekly list
+
+
+
+
+
+// FOOTER
+const date = new Date();
+const year = date.getFullYear();
+
+document.getElementById("currentYear").innerHTML = `Joseph Jameson-Rickard - ${year}`;
+
+const month = date.getMonth() + 1;
+const day = date.getDate();
+
+document.getElementById("lastModified").innerHTML = `Last Modified: ${document.lastModified}`;
