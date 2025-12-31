@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Weekly Meal Selector</title>
-      <meta name="description" content="">
-      <meta name="author" content="Joseph Jameson-Rickard">
-    
-      <!-- CSS -->
-      <link rel="stylesheet" href="dinner.css">
-      <link rel="stylesheet" href="./../../styles/header-footer.css">
-    
-      <!-- FONTS -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    
-      <!-- SCRIPTS -->
-      <script src="./../../Re-usable Code/getdates.js" defer></script>
-      <script src="" defer></script>
-      </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Meal Selector</title>
+    <meta name="description" content="">
+    <meta name="author" content="Joseph Jameson-Rickard">
+  
+    <!-- CSS -->
+    <link rel="stylesheet" href="dinner.css">
+    <link rel="stylesheet" href="./../../styles/header-footer.css">
+  
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+  
+    <!-- SCRIPTS -->
+    <script src="./../../Re-usable Code/getdates.js" defer></script>
+    <script src="dinners.js" defer></script>
   </head>
   <body>
     <!-- HEADER -->
@@ -86,7 +84,8 @@
 
       <div class="meal-generator">
         <h3>Click here to have your weekly meals randomly selected</h3>
-        <button>Generate Meals</button>
+        <button id="generator">Generate Meals</button>
+        <div class="items"></div>
       </div>
     </main>
 

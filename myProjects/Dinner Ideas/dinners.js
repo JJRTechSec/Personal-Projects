@@ -1,5 +1,3 @@
-
-
 let chickenMeals = ['Teriyaki', 'Pesto Chicken', 'Caesar Salad', 'Pasta Bake', 'Sweet and Sour', 'Enchiladas', 'Chicken Alfredo', 'Burritos', 'Fajitas'];
 let minceMeals = ['Meatballs', 'Tacos', 'Lasagne', 'Baguettes', 'Bolognese', 'Sloppy Joes', 'Form', 'Burgers'];
 let plantBased = ['Chickpea Curry', 'Falafel Salad'];
@@ -8,17 +6,20 @@ let highCarb = ['Teriyaki', 'Pesto Chicken', 'Pasta Bake', 'Sweet and Sour', 'Bu
 
 let usedMeals = [];
 
-let oddDays = ['Monday', 'Wednesday'];
-let evenDays = ['Tuesday', 'Thursday', 'Saturday'];
 let weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-let list;
-let dinner;
+
+let weeklyMeals = [];
 
 // Function for meal toggling
 function setMealToggle(buttonId, containerClass, meals) {
   const button = document.getElementById(buttonId);
   const container = document.querySelector(`.${containerClass} .items`);
+
+  if (!button || !container) {
+    console.error('Missing button or container:', buttonId, containerClass);
+    return;
+  }
 
   button.addEventListener('click', () => {
     const isActive = container.childElementCount > 0;
@@ -37,11 +38,6 @@ function setMealToggle(buttonId, containerClass, meals) {
     }
 
     container.appendChild(ul);
-
-    if (!button || !container) {
-      console.error('Missing button or container:', buttonId, containerClass);
-      return;
-    }
   });
 }
 
@@ -65,29 +61,14 @@ function pickRandomMeal(sourceArray) {
   return meal;
 }
 
-function findOddDayMeals() {
-  return pickRandomMeal(chickenMeals);
-}
+function pickRandomMeal(sourceArray) {
+  if (sourceArray.length === 0) return null;
 
-function findEvenDayMeals() {
-  return pickRandomMeal(minceMeals);
-}
+  const index = Math.floor(Math.random() * sourceArray.length);
+  const meal = sourceArray[index];
 
-function findFridayMeal() {
-  return pickRandomMeal(highCarb);
-}
-
-function findSundayMeal() {
-  const combined = [...plantBased, ...other];
-
-  const meal = pickRandomMeal(combined);
-  if (!meal) return null;
-
-  if (plantBased.includes(meal)) {
-    plantBased.splice(plantBased.indexOf(meal), 1);
-  } else {
-    other.splice(other.indexOf(meal), 1);
-  }
+  sourceArray.splice(index, 1);
+  usedMeals.push(meal);
 
   return meal;
 }
@@ -95,44 +76,55 @@ function findSundayMeal() {
 // find weekly list
 function findWeeklyMeals() {
   usedMeals.length = 0;
+  weeklyMeals.length = 0;
+
+  const chickenPool = [...chickenMeals];
+  const mincePool = [...minceMeals];
+  const plantPool = [...plantBased];
+  const otherPool = [...other];
+  const carbPool = [...highCarb];
 
   for (const day of weekdays) {
     let meal;
 
     if (day === 'Monday' || day === 'Wednesday') {
-      meal = findOddDayMeals();
+      meal = pickRandomMeal(chickenPool);
     } else if (day === 'Tuesday' || day === 'Thursday' || day === 'Saturday') {
-      meal = findEvenDayMeals();
+      meal = pickRandomMeal(mincePool);
     } else if (day === 'Friday') {
-      meal = findFridayMeal();
+      meal = pickRandomMeal(carbPool);
     } else {
-      meal = findSundayMeal();
+      const combined = [...plantPool, ...otherPool];
+      meal = pickRandomMeal(combined);
+
+      if (plantPool.includes(meal)) {
+        plantPool.splice(plantPool.indexOf(meal), 1);
+      } else {
+        otherPool.splice(otherPool.indexOf(meal), 1);
+      }
     }
 
+    weeklyMeals.push(meal)
     console.log(`${day}: ${meal}`);
   }
+  return weeklyMeals;
 };
 
-findWeeklyMeals();
-console.log(usedMeals);
-console.log(chickenMeals);
-console.log(minceMeals);
-console.log(other);
-console.log(highCarb);
-console.log(plantBased);
+
 // print weekly list
+const generator = document.getElementById('generator');
+const weeklyContainer = document.querySelector('.meal-generator .items')
 
+generator.addEventListener('click', function () {
+  weeklyContainer.innerHTML = '';
 
-
-
-
-// FOOTER
-const date = new Date();
-const year = date.getFullYear();
-
-document.getElementById("currentYear").innerHTML = `Joseph Jameson-Rickard - ${year}`;
-
-const month = date.getMonth() + 1;
-const day = date.getDate();
-
-document.getElementById("lastModified").innerHTML = `Last Modified: ${document.lastModified}`;
+  const meals = findWeeklyMeals();
+  const ul = document.createElement('ul');
+  
+  for (let i = 0; i < weekdays.length; i++) {
+    const li = document.createElement('li');
+    li.textContent = `${weekdays[i]} - ${meals[i]}`;
+    ul.appendChild(li);
+  }
+  weeklyContainer.appendChild(ul);
+})
