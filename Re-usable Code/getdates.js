@@ -1,7 +1,7 @@
 const date = new Date();
 const year = date.getFullYear();
 
-document.getElementById("currentYear").innerHTML = `©️Joseph Jameson-Rickard - ${year}`;
+document.getElementById("currentYear").innerHTML = `${year}`;
 
 const month = date.getMonth() + 1;
 const day = date.getDate();
