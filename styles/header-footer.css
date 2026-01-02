@@ -2,8 +2,8 @@
   --color1: rgb(137, 159, 255);
 }
 
-/* 320 x 480 PIXELS (320 WIDTH, phone portrait) */
-@media (max-width: 320px) {
+/* ALL SMALLER DEVICES PORTRAIT/PHONE AND SMALL TABLET LANDSCAPE */
+@media (max-width: 768px) {
   /* HEADER */
   header {
     display: flex;
@@ -13,6 +13,11 @@
     background-color: var(--color1);
     padding: 1em 0;
     height: 1em;
+  }
+
+  .header-divider {
+    border: 1px solid lime;
+    flex: 0.45;
   }
 
   #menu {
@@ -66,7 +71,9 @@
   }
 
   nav {
+    border: 1px solid hotpink;
     display: flex;
+    flex: 1;
   }
 
   nav a {
@@ -90,10 +97,11 @@
   }
 
   .name {
-    flex: 1;
+    border: 1px solid black;
+    flex: 0.8;
     text-align: left;
     font-size: 1.1em;
-    padding: 1em;
+    margin-left: 1em;
     font-weight: bold;
     text-decoration: none;
     color: black;
@@ -117,16 +125,31 @@
 }
 
 /* 480 x 320 PIXELS (480 WIDTH, phone landscape) */
-
+@media (min-width: 350px) {
+  .header-divider {
+    border: 1px solid lime;
+    flex: 1.13;
+  }
+}
 
 /* 600 x 800 PIXELS (600 WIDTH, small tablet portrait) */
-
+@media (min-width: 500px) {
+  .header-divider {
+    border: 1px solid lime;
+    flex: 1.65;
+  }
+}
 
 /* 800 x 600 PIXELS (800 WIDTH, small tabet landscape) */
 
 
 /* 768 x 1024 PIXELS (768 WIDTH, tablet portrait) */
-
+@media (min-width: 500px) {
+  .header-divider {
+    border: 1px solid lime;
+    flex: 2.35;
+  }
+}
 
 /* 1024 x 768 PIXELS (1024 WIDTH, tablet landscaoe) */
 
