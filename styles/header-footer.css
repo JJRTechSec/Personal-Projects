@@ -12,13 +12,15 @@
     align-items: center;
     background-color: var(--color1);
     padding: 1em 0;
+    height: 1em;
   }
 
   #menu {
     display: block;
     position: absolute;
+    flex: 1;
     right: 1em;
-    top: 2em;
+    top: 0.8em;
   }
 
   #menu::before {
@@ -31,10 +33,16 @@
     text-align: center;
     line-height: 2em;
     position: relative;
-    top: 2em;
-    right: 0;
+    top: 1em;
+    right: -1em;
     background-color: var(--color1);
-    border: 1px solid black;
+    border-top: 1px solid rgb(0, 0, 0, 0.3);
+    border-right: 1px solid rgb(0, 0, 0, 0.3);
+    border-left: 1px solid rgb(0, 0, 0, 0.3);
+  }
+
+  .menu-bottom {
+    border-bottom: 1px solid rgb(0, 0, 0, 0.3);
   }
 
   #menu.show li:hover {
