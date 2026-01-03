@@ -71,7 +71,6 @@
   }
 
   nav {
-    border: 1px solid hotpink;
     display: flex;
     flex: 1;
   }
@@ -124,8 +123,16 @@
   }
 }
 
+/*  */
+@media (min-width: 410px) {
+  .header-divider {
+    border: 1px solid lime;
+    flex: 1.13;
+  }
+}
+
 /* 480 x 320 PIXELS (480 WIDTH, phone landscape) */
-@media (min-width: 350px) {
+@media (min-width: 450px) {
   .header-divider {
     border: 1px solid lime;
     flex: 1.13;
@@ -133,18 +140,24 @@
 }
 
 /* 600 x 800 PIXELS (600 WIDTH, small tablet portrait) */
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   .header-divider {
     border: 1px solid lime;
     flex: 1.65;
   }
 }
 
-/* 800 x 600 PIXELS (800 WIDTH, small tabet landscape) */
+/* 800 x 600 PIXELS (800 WIDTH, small tablet landscape) */
+@media (min-width: 800px) {
+  .header-divider {
+    border: 1px solid lime;
+    flex: 1.13;
+  }
+}
 
 
 /* 768 x 1024 PIXELS (768 WIDTH, tablet portrait) */
-@media (min-width: 500px) {
+@media (min-width: 768px) {
   .header-divider {
     border: 1px solid lime;
     flex: 2.35;
