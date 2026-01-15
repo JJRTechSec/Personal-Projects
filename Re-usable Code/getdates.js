@@ -1,9 +1,8 @@
-const date = new Date();
-const year = date.getFullYear();
+const modifiedDate = new Date(document.lastModified);
 
-document.getElementById("currentYear").innerHTML = `${year}`;
+const year = modifiedDate.getFullYear();
+const month = modifiedDate.toLocaleString("en-GB", {month: "long"});
+const day = modifiedDate.getDate();
 
-const month = date.getMonth() + 1;
-const day = date.getDate();
-
-document.getElementById("lastModified").innerHTML = `Last Modified: ${document.lastModified}`;
+document.getElementById("currentYear").textContent = `${year}`;
+document.getElementById("lastModified").textContent = `Last Modified: ${day} ${month} ${year}`;
