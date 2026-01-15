@@ -144,7 +144,7 @@ footer {
 @media (min-width: 1200px) {
   .header-divider {
     border: 1px solid lime;
-    flex: 1.13;
+    flex: 5.4;
   }
 }
 
