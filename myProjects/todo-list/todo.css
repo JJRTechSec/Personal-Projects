@@ -19,3 +19,7 @@ button {
 input {
   margin-bottom: 1em;
 }
+
+button:hover {
+  cursor: pointer;
+}
