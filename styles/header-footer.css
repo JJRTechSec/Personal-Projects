@@ -16,7 +16,6 @@ header {
 }
 
 .name {
-  border: 1px solid black;
   flex: 1;
   text-align: left;
   font-size: 1.1em;
@@ -43,6 +42,10 @@ header {
   top: 0.8em;
 }
 
+#menu:hover {
+  cursor: pointer;
+}
+
 #menu::before {
   content: "\02630";
   right: 0.5em;
@@ -58,9 +61,7 @@ header {
   top: 1em;
   right: -1em;
   background-color: var(--color1);
-  border-top: 1px solid rgb(0, 0, 0, 0.3);
-  border-right: 1px solid rgb(0, 0, 0, 0.3);
-  border-left: 1px solid rgb(0, 0, 0, 0.3);
+  border: 1px solid rgb(0, 0, 0, 0.3);
 }
 
 .menu-bottom {

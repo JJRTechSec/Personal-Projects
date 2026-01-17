@@ -1,0 +1,21 @@
+.to-do-container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: auto;
+  align-items: center;
+  background-color: rgb(185, 107, 248);
+  border-radius: 4px;
+  padding: 2em;
+}
+
+input,
+button {
+  width: auto;
+  padding: 0.75em;
+}
+
+input {
+  margin-bottom: 1em;
+}
