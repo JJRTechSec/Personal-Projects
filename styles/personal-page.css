@@ -13,5 +13,24 @@ body {
 
 /* MAIN */
 main {
-  flex: 5;
+  flex: 1;
+  padding: 3em;
+}
+
+.my-intro {
+  border: 1px solid red;
+  width: 100%;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 12%;
+  height: auto;
+  display: inline-block;
+}
+
+p:nth-child(2) {
+  display: inline-block;
 }
