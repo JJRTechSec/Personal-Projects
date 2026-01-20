@@ -1,0 +1,14 @@
+header {
+  background: radial-gradient(circle at 0% 100%, var(--color1), transparent);
+  backdrop-filter: blur(10px); /*blurs content behind (glass effect)*/
+  -webkit-backdrop-filter: blur(10px); /*for safari*/
+  border: 1px solid rgba(255, 255, 255, 0.3); /*Light border*/
+  box-shadow: 0 8px 32px rgba(19, 163, 168, 0.1); /*soft shadow*/
+  border-radius: 0px; /*optional rounded corners*/
+  /*Positioning strictly for header*/
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  font-family: Montserrat;
+  font-weight: 500;
+}

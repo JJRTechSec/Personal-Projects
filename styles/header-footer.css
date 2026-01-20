@@ -2,7 +2,7 @@
   --color1: rgb(137, 159, 255);
 }
 
-/* ALL SMALLER DEVICES PORTRAIT/PHONE AND SMALL TABLET LANDSCAPE */
+/* ALL SMALLER DEVICES PORTRAIT/PHONE AND SMALL TABLET LANDSCAPE / PLUS GENERAL */
 
 /* HEADER */
 header {
@@ -10,9 +10,14 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: var(--color1);
+  background: radial-gradient(circle at 0% 100%, var(--color1), transparent);
   padding: 1em 0;
   height: 1em;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  font-family: Montserrat;
+  font-weight: 500;
 }
 
 .name {
@@ -54,22 +59,25 @@ header {
 
 #menu.show li {
   display: block;
-  width: 10em;
+  width: auto;
+  padding: 0.5em 1em;
   text-align: center;
   line-height: 2em;
   position: relative;
   top: 1em;
-  right: -1em;
+  right: 0;
   background-color: var(--color1);
-  border: 1px solid rgb(0, 0, 0, 0.3);
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  transition: 0.2s;
 }
 
 .menu-bottom {
-  border-bottom: 1px solid rgb(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
 }
 
 #menu.show li:hover {
-  background-color: white;
+  background-color: rgb(161, 160, 255);
+  border-radius: 6px;
 }
 
 #menu.show li:hover > a {
@@ -137,7 +145,7 @@ footer {
 @media (min-width: 900px) {
   .header-divider {
     /*border: 1px solid lime;*/
-    flex: 3.8;
+    flex: 2.8;
   }
 }
 
@@ -145,6 +153,7 @@ footer {
 /* DESKTOPS */
 @media (min-width: 1200px) {
   header {
+    background: radial-gradient(circle at 10% 80%, var(--color1), transparent);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -169,7 +178,7 @@ footer {
 
   .header-divider {
     /*border: 1px solid lime;*/
-    flex: 5.4;
+    flex: 4;
   }
 }
 
