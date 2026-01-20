@@ -11,6 +11,10 @@ header {
   justify-content: center;
   align-items: center;
   background: radial-gradient(circle at 0% 100%, var(--color1), transparent);
+  backdrop-filter: blur(10px); /*blurs content behind (glass effect)*/
+  -webkit-backdrop-filter: blur(10px); /*for safari*/
+  border: 1px solid rgba(255, 255, 255, 0.3); /*Light border*/
+  box-shadow: 0 8px 32px rgba(19, 163, 168, 0.1); /*soft shadow*/
   padding: 1em 0;
   height: 1em;
   position: fixed;
@@ -151,34 +155,35 @@ footer {
 
 
 /* DESKTOPS */
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   header {
-    background: radial-gradient(circle at 10% 80%, var(--color1), transparent);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color1);
-    padding: 1em 0;
-    height: 2em;
+    border: 1px solid blue;
+  }
+
+  #menu {
+    position: static;
   }
 
   #menu::before {
-    position: absolute;
+    display: none;
+  }
+
+  .name,
+  nav {
+    flex: 1;
+    border: 1px solid lime;
+  }
+
+  .navigation {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    right: 0.25em;
-    top: -20%;
-    font-size: 2em;
   }
 
-  #menu.show::before {
-    right: 0.5em;
-    top: 3%;
-  }
-
-  .header-divider {
-    /*border: 1px solid lime;*/
-    flex: 4;
+  .navigation li {
+    display: block;
+    margin: 0 1em;
   }
 }
 
