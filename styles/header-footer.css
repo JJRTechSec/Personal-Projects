@@ -1,5 +1,7 @@
 :root {
-  --color1: rgb(137, 159, 255);
+  --color1: #41dfff;
+  --color2: #2b6cb0;
+  --box-shadow: 0 8px 32px rgba(19, 163, 168, 0.1);
 }
 
 /* ALL SMALLER DEVICES PORTRAIT/PHONE AND SMALL TABLET LANDSCAPE / PLUS GENERAL */
@@ -10,11 +12,11 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at 0% 100%, var(--color1), transparent);
+  background: radial-gradient(circle at left, var(--color1) 40%, var(--color2) 90%);
   backdrop-filter: blur(10px); /*blurs content behind (glass effect)*/
   -webkit-backdrop-filter: blur(10px); /*for safari*/
-  border: 1px solid rgba(255, 255, 255, 0.3); /*Light border*/
-  box-shadow: 0 8px 32px rgba(19, 163, 168, 0.1); /*soft shadow*/
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /*Light border*/
+  box-shadow: var(--box-shadow); /*soft shadow*/
   padding: 1em 0;
   height: 1em;
   position: fixed;
@@ -113,10 +115,6 @@ nav a {
   text-align: left;
 }
 
-nav a:hover {
-  color: white;
-}
-
 .navigation {
   list-style: none;
 }
@@ -130,9 +128,10 @@ nav a:hover {
 /* FOOTER */
 footer {
   text-align: center;
-  background-color: var(--color1);
+  background: radial-gradient(circle at left, var(--color1) -100%, var(--color2) 100%);
   width: 100%;
   padding: 0.5em 0;
+  color: black;
 }
 
 
@@ -156,31 +155,58 @@ footer {
 
 /* DESKTOPS */
 @media screen and (min-width: 1200px) {
+  header {
+    height: 2em;
+  }
+
+  .name {
+    font-size: 1.5em;
+    flex: 15;
+  }
+
+  .header-divider {
+    display: none;
+  }
+
   #menu {
     position: static;
+    flex: 30;
   }
 
   #menu::before {
     display: none;
   }
 
-  .name,
-  nav {
-    flex: 1;
-    border: 1px solid lime;
-  }
-
   .navigation {
-    border: 1px solid black;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 2em;
+    flex: 8;
   }
 
   .navigation li {
     display: block;
     margin: 0 1em;
-    width: auto;
+    display: inline-block;
+    position: relative;
+  }
+
+  .navigation li::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(191, 245, 238);
+    transition: transform 0.2s ease-out;
+  }
+
+  .navigation li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
   }
 }
 
@@ -188,7 +214,6 @@ footer {
 /* LARGE / WIDE SCREENS */
 @media (min-width: 1536px) {
   .header-divider {
-    /*border: 1px solid lime;*/
-    flex: 2.35;
+    display: none;
   }
 }
