@@ -156,10 +156,6 @@ footer {
 
 /* DESKTOPS */
 @media screen and (min-width: 1200px) {
-  header {
-    border: 1px solid blue;
-  }
-
   #menu {
     position: static;
   }
@@ -184,6 +180,7 @@ footer {
   .navigation li {
     display: block;
     margin: 0 1em;
+    width: auto;
   }
 }
 
