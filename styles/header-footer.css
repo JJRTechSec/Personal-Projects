@@ -17,21 +17,23 @@
     justify-content: center;
     align-items: center;
     background: radial-gradient(circle at left, var(--color1) 40%, var(--color2) 90%);
-    backdrop-filter: blur(10px);
-    /*blurs content behind (glass effect)*/
-    -webkit-backdrop-filter: blur(10px);
-    /*for safari*/
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    /*Light border*/
-    box-shadow: var(--box-shadow);
-    /*soft shadow*/
-    padding: 1em 0;
-    height: 1em;
+    backdrop-filter: blur(10px); /*blurs content behind (glass effect)*/
+    -webkit-backdrop-filter: blur(10px); /*for safari*/
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /*Light border*/
+    box-shadow: var(--box-shadow); /*soft shadow*/
+    padding: 0.5em 0;
+    min-height: 34px;
     position: fixed;
     width: 100%;
     z-index: 1000;
     font-family: Montserrat;
     font-weight: 500;
+    box-sizing: border-box;
+  }
+
+  header,
+  header a {
+    line-height: 1.2;
   }
 
   .name {
@@ -76,13 +78,11 @@
     width: auto;
     padding: 0.5em 1em;
     text-align: center;
-    line-height: 2em;
     position: relative;
     top: 1em;
     right: 0;
     background-color: var(--color1);
     border: 1px solid rgb(0, 0, 0, 0.1);
-    transition: 0.2s;
   }
 
   .menu-bottom {
@@ -121,6 +121,7 @@
     font-size: 1.25em;
     color: black;
     text-align: left;
+    display: inline-block;
   }
 
   .navigation {
@@ -165,12 +166,12 @@
 /* DESKTOPS */
 @media screen and (min-width: 1200px) {
   header {
-    height: 2em;
+    padding: 0;
   }
 
   .name {
     font-size: 1.5em;
-    flex: 15;
+    flex: 0 0 auto;
   }
 
   .header-divider {
@@ -179,7 +180,15 @@
 
   #menu {
     position: static;
-    flex: 30;
+    flex: 1;
+    outline: none;
+  }
+
+  #menu a,
+  #menu a:focus,
+  #menu a:active,
+  #menu a:focus-visible {
+    outline: none;
   }
 
   #menu::before {

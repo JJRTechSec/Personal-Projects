@@ -16,7 +16,6 @@
   main {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 3em;
   }
 
   .my-intro {
@@ -30,6 +29,7 @@
     position: relative;
     box-shadow: var(--box-shadow);
     border-radius: 6px;
+    width: 100%;
   }
 
   img {
