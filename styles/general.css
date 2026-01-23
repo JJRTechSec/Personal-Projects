@@ -19,4 +19,5 @@ main {
   line-height: 2em;
   align-items: center;
   flex: 1;
+  font-family: Roboto;
 }
