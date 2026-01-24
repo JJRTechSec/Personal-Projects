@@ -1,0 +1,42 @@
+:root {
+  --grey-text: ;
+  --grey-background: ;
+  --grey-background-light: ;
+  --trending-gradient-color: ;
+} 
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+main {
+  display: flex;
+}
+
+.main-left {
+  flex: 1;
+}
+
+.main-right {
+  flex: 3;
+}
+
+.trending-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.show-all {
+  padding-right: 3.25em;
+}
