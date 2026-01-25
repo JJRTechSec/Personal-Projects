@@ -1,8 +1,9 @@
 :root {
-  --grey-text: ;
-  --grey-background: ;
-  --grey-background-light: ;
+  --grey-text: #656565;
+  --grey-background: #1f1f1f;
+  --grey-background-light: #2a2a2a;
   --trending-gradient-color: ;
+  --trending-link1: #b3b3b3;
 } 
 
 html,
@@ -17,10 +18,12 @@ body {
   min-height: 100vh;
   background-color: black;
   color: white;
+  padding: 0 0.5em;
 }
 
 main {
   display: flex;
+  border: 1px solid blue;
 }
 
 .main-left {
