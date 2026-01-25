@@ -1,9 +1,16 @@
 :root {
-  --grey-text: #656565;
-  --grey-background: #1f1f1f;
+  --grey-background1: #656565;
+  --grey-background2: #1f1f1f;
   --grey-background-light: #2a2a2a;
   --trending-gradient-color: ;
   --trending-link1: #b3b3b3;
+  --slider-start-gradient: hsla(0, 0%, 7%, 0.7);
+  --slider-end-gradient: hsla(0, 0%, 7%, 0.7);
+  --font-family: Montserrat;
+  --font-weight-light: 300;
+  --font-weight-medium: 600;
+  --font-weight-medium-more: 700;
+  --font-weight-heavy: 900;
 } 
 
 html,
@@ -19,11 +26,11 @@ body {
   background-color: black;
   color: white;
   padding: 0;
+  font-family: var(--font-family);
 }
 
 main {
   display: flex;
-  border: 1px solid blue;
 }
 
 .main-left {
