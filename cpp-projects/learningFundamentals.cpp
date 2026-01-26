@@ -20,6 +20,26 @@ int main() {
 
   // Multiple variables
   int x = 5, y = 6, z = 50;
-  cout << x + y + z;
+  cout << x + y + z << endl;
+
+  x = y = z = 50;
+  cout << x << ", " << y << ", " << z << "\n";
+
+  // Reassigning variables
+  int number = 15;
+  number = 10; //myNum is now 10 instead of 15
+  cout << number << endl;
+
+  // Dsplaying variables
+  int myAge = 27;
+  cout << "I am " << myAge << " years old.\n";
+
+  string name = "John";
+  int age = 35;
+  double height = 6.1;
+  cout << name << " is " << age << " years old and " << height << " feet tall." << endl;
+
+  
+
   return 0; // required to end the main function
 }
