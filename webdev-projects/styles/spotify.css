@@ -14,6 +14,10 @@
   --main-left-background-color: #121212b3;
 } 
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
@@ -33,16 +37,49 @@ body {
 main {
   display: flex;
   gap: 1em;
+  margin: 0.75em 0.5em;
+  height: 89vh;
 }
 
 .main-left {
   flex: 1;
   background-color: var(--main-left-background-color);
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.main-left-middle {
+  height: 50vh;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.main-left-middle:hover {
+  scrollbar-width: auto;
+}
+
+.main-left-middle2 {
+  display: flex;
+  flex: row;
+  flex-wrap: wrap;
+}
+
+.main-left-middle2 span {
+  font-size: 0.75em;
+  margin: 0.9em;
+  font-weight: 400;
 }
 
 .main-right {
+  border: 1px solid blue;
   flex: 3;
-  background-color: ;
+  background: linear-gradient(var(--main-right-background-color), var(--main-left-background-color) 90%);
+  padding-left: 2.5em;
+  padding-top: 2.5em;
+  border-radius: 8px;
+  overflow: auto;
+  scrollbar-width: none;
 }
 
 h1 {
@@ -53,17 +90,19 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-weight: 700;
+  padding-left: 0.75em;
 }
 
 .trending-container {
   display: flex;
   flex-direction: column;
   background-color:grey;
-  width: 12em;
+  width: 12.25em;
   height: auto;
   padding: 1em 0;
   border-radius: 8px;
-  margin-top: 0.5em;
+  margin: 0.5em 0.5em 2em 0.5em;
 }
 
 .trending-container img {
@@ -86,7 +125,8 @@ h1 {
 
 .trending-link2 {
   color: var(--trending-link1);
-  font-size: 0.95em;
+  width: 90%;
+  font-size: 0.85em;
   font-weight: 500;
 }
 

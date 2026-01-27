@@ -1,5 +1,4 @@
 header {
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
   min-height: 3em;
@@ -17,7 +16,6 @@ nav {
 }
 
 .nav-left {
-  border: 1px solid hotpink;
   display: flex;
   flex-direction: row;
   flex: 0.5;
@@ -25,7 +23,6 @@ nav {
 }
 
 .nav-middle {
-  border: 1px solid yellow;
   display: flex;
   flex-direction: row;
   flex: 2;
@@ -36,7 +33,6 @@ nav {
 .home-icon {
   border: 1px solid nlue;
   width: 100%;
-  background-color: white;
 }
 
 input {
@@ -56,7 +52,6 @@ input::placeholder {
 }
 
 .nav-right {
-  border: 1px solid turquoise;
   display: flex;
   flex-direction: row;
   flex: 3;
