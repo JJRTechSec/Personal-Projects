@@ -11,6 +11,7 @@
   --font-weight-medium: 600;
   --font-weight-medium-more: 700;
   --font-weight-heavy: 900;
+  --main-left-background-color: #121212b3;
 } 
 
 html,
@@ -31,14 +32,17 @@ body {
 
 main {
   display: flex;
+  gap: 1em;
 }
 
 .main-left {
   flex: 1;
+  background-color: var(--main-left-background-color);
 }
 
 .main-right {
   flex: 3;
+  background-color: ;
 }
 
 h1 {
@@ -49,6 +53,41 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.trending-container {
+  display: flex;
+  flex-direction: column;
+  background-color:grey;
+  width: 12em;
+  height: auto;
+  padding: 1em 0;
+  border-radius: 8px;
+  margin-top: 0.5em;
+}
+
+.trending-container img {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.trending-link1,
+.trending-link2 {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 0.5em;
+}
+
+.trending-link1 {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.trending-link2 {
+  color: var(--trending-link1);
+  font-size: 0.95em;
+  font-weight: 500;
 }
 
 .trending-links {
