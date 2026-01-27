@@ -1,10 +1,14 @@
 header {
   display: flex;
   flex-direction: row;
-  min-height: 3em;
+  min-height: 4em;
   justify-content: center;
   align-items: center;
-  margin-top: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
 }
 
 nav {
@@ -41,10 +45,16 @@ input {
   font-size: 1em;
   color: white;
   border: none;
+  height: auto;
 }
 
 input::placeholder {
   color: var(--trending-link1);
+}
+
+input:focus {
+  outline: none;
+  border-radius: 50px;
 }
 
 .browse-icon {
@@ -79,7 +89,7 @@ input::placeholder {
   border-radius: 30px;
   border: none;
   font-size: 1em;
-  font-weight: 600;
+  font-weight: 800;
   padding: 1em 2em;
 }
 

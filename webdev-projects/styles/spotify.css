@@ -15,6 +15,7 @@
   --main-right-gradient-start: #1f1f1f;
   --footer-gradient-start: #af2896;
   --footer-gradient-end: #509bf5;
+  --decorative-subdued: #292929;
 } 
 
 * {
@@ -26,6 +27,7 @@ html,
 body {
   margin: 0;
   height: 100%;
+  scrollbar-color: #ffffff4d;
 }
 
 body {
@@ -48,7 +50,7 @@ main {
   grid-template-columns: 1fr 2.25fr;
   column-gap: 1em;
   row-gap: 0;
-  margin: 0.75em 0.5em 0 0.5em;
+  margin: 4.25em 0.5em 0 0.5em;
   height: 85vh;
 }
 
@@ -72,13 +74,12 @@ main {
   background-color: #1f1f1f;
 }
 
-.main-left-middle:hover {
-  scrollbar-width: auto;
-}
-
-.main-left-middle::-webkit-scrollbar,
+.main-left-middle:hover,
+.main-right:hover,
+.main-left-middle::-webkit-scrollbar:hover,
 .main-right::-webkit-scrollbar {
-  background-color: #ffffff4d;
+  scrollbar-width: auto;
+  scrollbar-color: #ffffff4d;
 }
 
 .main-left-middle2 {
@@ -99,7 +100,7 @@ main {
 
 .main-right {
   flex: 3;
-  background: linear-gradient(var(--main-right-gradient-start) 10%, var(--main-left-background-color)90%);
+  background: linear-gradient(var(--main-right-gradient-start) 0%, var(--main-left-background-color) 60%);
   padding-left: 2.5em;
   padding-top: 2.5em;
   overflow: auto;
@@ -116,6 +117,11 @@ h1 {
   justify-content: space-between;
   font-weight: 700;
   padding-left: 0.75em;
+}
+
+.slider {
+  display: flex;
+  flex-direction: row;
 }
 
 .trending-container {
@@ -149,6 +155,7 @@ h1 {
 .trending-link1 {
   font-size: 1em;
   font-weight: 600;
+  color: white;
 }
 
 .trending-link2 {
