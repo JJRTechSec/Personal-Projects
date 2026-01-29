@@ -16,14 +16,17 @@ nav {
   flex-direction: row;
   width: 100%;
   padding: 0.5em;
-  height: 3em;
+  height: 3.5em;
 }
 
 .nav-left {
   display: flex;
   flex-direction: row;
   flex: 0.5;
-  margin-right: 2em;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-middle {
@@ -32,20 +35,29 @@ nav {
   flex: 2;
   border-radius: 30px;
   background-color: var(--grey-background2);
+  height: 3em;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.home-icon {
-  border: 1px solid nlue;
-  width: 100%;
+#spotify-logo {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+#home-icon {
+  border-radius: 50px;
+  width: 3em;
+  height: 3em;
 }
 
 input {
   width: 80%;
-  background-color: var(--grey-background);
+  background-color: var(--grey-background2);
+  border-radius: 30px 0 0 30px;
   font-size: 1em;
   color: white;
   border: none;
-  height: auto;
 }
 
 input::placeholder {
@@ -96,16 +108,43 @@ input:focus {
 /* FOOTER */
 
 .footer-info {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 1em;
+  border-top: 1px solid var(--grey-background1);
+  border-bottom: 1px solid var(--grey-background1);
+  margin: 0em 1.25em;
+  margin-left: -1.25em;
+  padding: 2em 0;
 }
 
 .footer-info1,
 .footer-info2,
 .footer-info3,
-.footer-info4,
-.footer-info5 {
-  flex: 1;
+.footer-info4 {
   display: flex;
   flex-direction: column;
+  font-size: 0.9em;
+  line-height: 2em;
+  font-weight: 500;
+  flex-wrap: wrap;
+  width: 10em;
+}
+
+.footer-info5 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+}
+
+.footer-info5 div {
+  padding: 0.5em 0.6em 0.4em 0.6em;
+  background-color: var(--main-right-gradient-start);
+  border-radius: 500px;
+  margin-top: 1em;
+}
+
+.footer-info5 img {
+  width: 20px;
 }
