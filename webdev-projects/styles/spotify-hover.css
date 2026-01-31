@@ -1,0 +1,18 @@
+a:hover,
+.trending-links:hover,
+.trending-container,
+button,
+.show-all,
+.main-left-middle2 span:hover {
+  cursor: pointer;
+}
+
+a:hover,
+.show-all:hover {
+  text-decoration: underline;
+}
+
+.main-left-middle2 span:hover,
+.nav-right a:hover {
+  text-decoration: none;
+}

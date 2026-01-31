@@ -8,7 +8,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  background-color: black;
+  background-color: var(--background6);
 }
 
 nav {
@@ -35,7 +35,7 @@ nav {
   flex-direction: row;
   flex: 2;
   border-radius: 30px;
-  background-color: var(--grey-background2);
+  background-color: var(--background2);
   height: 3em;
   justify-content: space-around;
   align-items: center;
@@ -55,7 +55,7 @@ nav {
 
 input {
   width: 100%;
-  background-color: var(--grey-background2);
+  background-color: var(--background2);
   border-radius: 30px 0 0 30px;
   font-size: 1em;
   color: white;
@@ -63,7 +63,7 @@ input {
 }
 
 input::placeholder {
-  color: var(--trending-link1);
+  color: var(--color4);
 }
 
 input:focus {
@@ -72,19 +72,19 @@ input:focus {
 }
 
 .nav-middle span {
-  border-left: 1px solid var(--trending-link1);
+  border-left: 1px solid var(--color4);
   height: 60%;
 }
 
 #browse-icon {
   margin-right: 0;
-  background-color: none;
+  background-color: var(--background5);
   border-radius: 50px;
   padding: 1em;
 }
 
 .nav-middle button {
-  background-color: transparent;
+  background-color: var(--background5);
   border: none;
 }
 
@@ -92,7 +92,7 @@ input:focus {
   display: flex;
   flex-direction: row;
   flex: 3;
-  background-color: transparent;
+  background-color: var(--background5);
   align-items: center;
   justify-content: space-between;
   margin-left: 8em;
@@ -100,10 +100,10 @@ input:focus {
 
 .nav-right button,
 .nav-right span {
-  background-color: transparent;
-  color: var(--trending-link1);
+  background-color: var(--background5);
+  color: var(--color4);
   border: none;
-  font-weight: 700;
+  font-weight: var(--font-weight-heavy1);
   font-size: 1em;
 }
 
@@ -122,12 +122,12 @@ input:focus {
 }
 
 .suli-buttons .login-button {
-  background-color: white;
-  color: black;
+  background-color: var(--background7);
+  color: var(--color1);
   border-radius: 30px;
   border: none;
   font-size: 1em;
-  font-weight: 700;
+  font-weight: var(--font-weight-heavy1);
   padding: 0.75em 1.5em;
 }
 
@@ -137,8 +137,8 @@ input:focus {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 1em;
-  border-top: 1px solid var(--grey-background1);
-  border-bottom: 1px solid var(--grey-background1);
+  border-top: 1px solid var(--background1);
+  border-bottom: 1px solid var(--background1);
   margin: 0em 1.25em;
   margin-left: -1.25em;
   padding: 2em 0;
@@ -152,7 +152,7 @@ input:focus {
   flex-direction: column;
   font-size: 0.9em;
   line-height: 2em;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium2);
   flex-wrap: wrap;
   width: 10em;
 }
@@ -166,7 +166,7 @@ input:focus {
 
 .footer-info5 div {
   padding: 0.5em 0.6em 0.4em 0.6em;
-  background-color: var(--main-right-gradient-start);
+  background-color: var(--background2);
   border-radius: 500px;
   margin-top: 1em;
 }

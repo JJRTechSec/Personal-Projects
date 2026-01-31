@@ -1,22 +1,30 @@
 :root {
-  --grey-background1: #656565;
-  --grey-background2: #1f1f1f;
-  --grey-background-light: #2a2a2a;
-  --trending-gradient-color: ;
-  --trending-link1: #b3b3b3;
+  --background1: #656565;
+  --background2: #1f1f1f;
+  --background3: #2a2a2a;
+  --background4: #121212b3;
+  --background5: transparent;
+  --background-6: #000000;
+  --background7: #ffffff;
+  --main-left-background-color-rgb: rgb(31, 31, 31);
+  --color1: #000000;
+  --color2: #ffffff;
+  --color4: #b3b3b3;
+  --font-family: Montserrat;
+  --font-weight-light1: 100;
+  --font-weight-light2: 200;
+  --font-weight-light3: 300;
+  --font-weight-medium1: 400;
+  --font-weight-medium2: 500;
+  --font-weight-medium3: 600;
+  --font-weight-heavy1: 700;
+  --font-weight-heavy2: 800;
+  --font-weight-heavy3: 900;
   --slider-start-gradient: hsla(0, 0%, 7%, 0.7);
   --slider-end-gradient: hsla(0, 0%, 7%, 0.7);
-  --font-family: Montserrat;
-  --font-weight-light: 300;
-  --font-weight-medium: 600;
-  --font-weight-medium-more: 700;
-  --font-weight-heavy: 900;
-  --main-left-background-color: #121212b3;
-  --main-right-gradient-start: #1f1f1f;
   --footer-gradient-start: #af2896;
   --footer-gradient-end: #509bf5;
   --decorative-subdued: #292929;
-  --main-left-background-color-rgb: rgb(31, 31, 31);
 } 
 
 * {
@@ -43,7 +51,7 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--trending-link1);
+  color: var(--color4);
 }
 
 main {
@@ -63,7 +71,7 @@ main {
 
 .main-left {
   flex: 1;
-  background-color: var(--main-left-background-color);
+  background-color: var(--background4);
   display: flex;
   flex-direction: column;
   padding: 0.5em;
@@ -82,10 +90,10 @@ main {
 .main-left-top button {
   padding: 0 1.25em;
   color: white;
-  background-color: var(--main-right-gradient-start);
+  background-color: var(--background2);
   border: none;
   border-radius: 50px;
-  font-weight: 700;
+  font-weight: var(--font-weight-light-heavy);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -94,8 +102,8 @@ main {
 
 .main-left-top button .plus {
   font-size: 2em;
-  font-weight: 100;
-  color: var(--trending-link1);
+  font-weight: var(--font-weight-light1);
+  color: var(--color4);
   padding-bottom: 0.15em;
 }
 
@@ -112,7 +120,7 @@ main {
 }
 
 .main-left-middle div {
-  background-color: var(--main-right-gradient-start);
+  background-color: var(--background2);
   border-radius: 8px;
   padding: 0.75em 1.5em;
   margin-bottom: 1em;
@@ -125,7 +133,7 @@ main {
 
 .main-left-middle h4 {
   font-size: 1.25em;
-  font-weight: 700;
+  font-weight: var(--font-weight-light-heavy);
 }
 
 .main-left-middle button {
@@ -134,7 +142,7 @@ main {
   padding: 0.75em 1.25em;
   align-self: flex-start;
   margin-top: 1.5em;
-  font-weight: 700;
+  font-weight: var(--font-weight-light-heavy);
 }
 
 .main-left-middle2 {
@@ -146,24 +154,24 @@ main {
 }
 
 .main-left-middle2 a {
-  color: var(--trending-link1);
+  color: var(--color4);
 }
 
 .main-left-middle2 span {
   font-size: 0.65em;
   margin: 0.9em;
-  font-weight: 400;
+  font-weight: var(--font-weight-medium1);
 }
 
 .main-left-middle3 {
   padding: 1em;
   font-size: 0.8em;
   margin-top: -1em;
-  color: white;
+  color: var(--color2);
 }
 
 .cookies {
-  color: white;
+  color: var(--color2);
 }
 
 .main-left-bottom {
@@ -171,11 +179,11 @@ main {
 }
 
 .main-left-bottom button {
-  border: 1px solid var(--grey-background1);
+  border: 1px solid var(--background1);
   border-radius: 50px;
   padding: 0.5em 1em;
   font-size: 0.9em;
-  font-weight: 700;
+  font-weight: var(--font-weight-heavy1);
   background: none;
   color: white;
   display: flex;
@@ -197,7 +205,7 @@ main {
   overflow: auto;
   scrollbar-width: none;
   position: relative;
-  background: linear-gradient(var(--main-right-gradient-start) 0%, var(--main-left-background-color) 30%);
+  background: linear-gradient(var(--background2) 0%, var(--background4) 30%);
 }
 
 h1 {
@@ -208,7 +216,7 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-weight: 700;
+  font-weight: var(--font-weight-heavy1);
   padding-left: 0.75em;
   margin-bottom: 1em;
 }
@@ -226,7 +234,7 @@ h1 {
 .trending-container {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(var(--main-right-gradient-start) 70%, var(--main-left-background) 30%);
+  background: linear-gradient(var(--background2) 70%, var(--main-left-background-color-rgb) 30%);/* CHECK THIS OUT*/
   width: 11em;
   height: auto;
   border-radius: 8px;
@@ -234,7 +242,7 @@ h1 {
 }
 
 .trending-container:hover {
-  background-color: var(--main-left-background);
+  background-color: var(--background4);
 }
 
 .trending-container img {
@@ -256,15 +264,15 @@ h1 {
 
 .trending-link1 {
   font-size: 1em;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium3);
   color: white;
 }
 
 .trending-link2 {
-  color: var(--trending-link1);
+  color: var(--color4);
   width: 90%;
   font-size: 0.85em;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium2);
 }
 
 .trending-links {
@@ -275,31 +283,12 @@ h1 {
 
 .show-all {
   padding-right: 3.25em;
-  color: var(--trending-link1);
-}
-
-a:hover,
-.trending-links:hover,
-.trending-container,
-button,
-.show-all,
-.main-left-middle2 span:hover {
-  cursor: pointer;
-}
-
-a:hover,
-.show-all:hover {
-  text-decoration: underline;
-}
-
-.main-left-middle2 span:hover,
-.nav-right a:hover {
-  text-decoration: none;
+  color: var(--color4);
 }
 
 .spotify-copyright {
   font-size: 0.8em;
-  color: var(--trending-link1);
+  color: var(--color4);
   margin: 3em 0;
 }
 
@@ -331,18 +320,18 @@ aside {
 
 .footer-left p {
   font-size: 0.9em;
-  font-weight: 700;
+  font-weight: var(--font-weight-heavy1);
   line-height: 1em;
 }
 
 .footer-left span {
-  font-weight: 500;
+  font-weight: var(--font-weight-medium2);
   font-size: 1.1em;
 }
 
 .footer-button {
   font-size: 1.25em;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium3);
   border-radius: 50px;
   border: none;
   padding: 0.75em 1.25em;
