@@ -16,3 +16,7 @@ a:hover,
 .nav-right a:hover {
   text-decoration: none;
 }
+
+.trending-container:hover {
+  background: linear-gradient(var(--background2) 70%, var(--main-left-background-color-rgb) 30%);
+}
