@@ -1,19 +1,16 @@
-import random
-
-wordList = ['helps', 'maker', 'pizza', 'plaza', 'sport', 'loser', 'posed']
-word = random.choice(wordList).upper()
+word = 'python'
 guess = ''
 
 while guess != word:
-  guess = input("Guess a word: ").upper()
+  guess = input("Guess a word: ").lower()
   wordSplit = list(word)
   guessSplit = list(guess)
   index = 0
 
   if word == guess:
     print("You win!")
-  elif range(len(word)) != range(len(guess)):
-    print("Type a word containing 5 letters")
+  elif len(word) != len(guess):
+    print("Type a word containing 6 letters")
   else:
     print("Try again")
 
