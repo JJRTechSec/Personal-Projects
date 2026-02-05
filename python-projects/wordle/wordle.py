@@ -1,6 +1,6 @@
 import random
 
-wordList = ['helps', 'maker', 'pizza', 'plaza', 'sport', 'loser', 'posed']
+wordList = ['helps', 'maker', 'pizza', 'plaza', 'sport', 'loser', 'posed', 'sheep']
 word = random.choice(wordList).upper()
 guess = ''
 
@@ -21,6 +21,8 @@ while guess != word:
     for character in guessSplit:
       if guessSplit[index] == wordSplit[index]:
         letter = guessSplit[index]
+      elif guessSplit[index] in wordSplit:
+        letter = guessSplit[index].lower()
       else:
         letter = '_'
     print(letter, end='')
