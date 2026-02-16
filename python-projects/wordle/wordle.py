@@ -3,21 +3,21 @@ import random
 wordList = ['helps', 'maker', 'pizza', 'plaza', 'sport', 'loser', 'posed', 'sheep']
 word = random.choice(wordList).upper()
 guess = ''
+alphabet = ['abcdefghijklmnopqrstuvwxyz']
 
-while guess != word:
+while True:
   guess = input("Guess a word: ").upper()
-  wordSplit = list(word)
-  guessSplit = list(guess)
-  index = 0
 
   if word == guess:
     print("You win!")
-  elif range(len(word)) != range(len(guess)):
+    break
+  elif len(guess) != len(word):
     print("Type a word containing 5 letters")
   else:
     print("Try again")
 
-  for letter in wordSplit:
+  for letter in range(word):
+    newAlphabet = list(alphabet)
     for character in guessSplit:
       if guessSplit[index] == wordSplit[index]:
         letter = guessSplit[index]
@@ -25,6 +25,12 @@ while guess != word:
         letter = guessSplit[index].lower()
       else:
         letter = '_'
+      
+      if letter in newAlphabet:
+        alphabet.pop(alphabet.index(letter))
+      else:
+        continue
     print(letter, end='')
     index += 1
+  print(alphabet)
   print()
