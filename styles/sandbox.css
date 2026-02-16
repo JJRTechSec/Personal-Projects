@@ -1,3 +1,14 @@
 main {
   margin-top: 5em;
 }
+
+.name-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+}
+
+.delete-button {
+  width: auto;
+  height: 2em;
+}
