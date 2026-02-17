@@ -6,12 +6,20 @@ main.appendChild(input);
 //create button to register the name
 let addButton = document.createElement('button');
 addButton.textContent = 'Add Name';
-// append button to main
+
+//button to clear local storage
+let clearButton = document.createElement('button');
+clearButton.textContent = 'Clear Names from Storage';
+// append buttons to main
 main.appendChild(addButton);
+main.appendChild(clearButton);
 
 //create div to contains names
 let nameContainer = document.createElement('div');
 nameContainer.classList.add('name-container');
+
+// create array for localStorage of names
+let arrayOfNames = JSON.parse(localStorage.getItem('Names')) || [];
 
 //clear input and restore focus to input when clicked
 // add name underneath when clicked
@@ -20,8 +28,9 @@ addButton.addEventListener('click', function () {
   let addedName = document.createElement('h4');
   // Assign input to h4 element and save to localStorage
   let username = input.value;
-  localStorage.setItem('Name', username);
-  addedName.textContent = localStorage.getItem('Name');
+  saveNamesToStorage(username);
+  displaySavedNames(arrayOfNames);
+  addedName.textContent = localStorage.getItem('Names');
   //Create delete button
   let deleteButton = document.createElement('button');
   deleteButton.innerHTML = '&#10060';
@@ -38,5 +47,22 @@ addButton.addEventListener('click', function () {
   deleteButton.addEventListener('click', function () {
     nameContainer.removeChild(addedName);
     nameContainer.removeChild(deleteButton);
+    arrayOfNames.pop(username);
   })
 })
+
+clearButton.addEventListener('click', function () {
+  localStorage.removeItem('Names');
+  arrayOfNames.splice(0, arrayOfNames.length);
+})
+
+function saveNamesToStorage(typedName) {
+  arrayOfNames.push(typedName);
+  localStorage.setItem('Names', JSON.stringify(arrayOfNames));
+}
+
+function displaySavedNames(arrayOfNames) {
+  arrayOfNames.forEach(function (name) {
+    console.log(arrayOfNames[name]);
+  })
+}
