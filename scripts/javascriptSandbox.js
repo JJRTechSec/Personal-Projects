@@ -18,9 +18,10 @@ nameContainer.classList.add('name-container');
 addButton.addEventListener('click', function () {
   // create element type for name display
   let addedName = document.createElement('h4');
-  // Assign input to h4 element
+  // Assign input to h4 element and save to localStorage
   let username = input.value;
-  addedName.textContent = username;
+  localStorage.setItem('Name', username);
+  addedName.textContent = localStorage.getItem('Name');
   //Create delete button
   let deleteButton = document.createElement('button');
   deleteButton.innerHTML = '&#10060';
